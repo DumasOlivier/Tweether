@@ -6,8 +6,7 @@ import "./Owned.sol";
 contract BaseStorage is Owned {
     address public controllerAddr;
 
-    function setControllerAddr(address _controllerAddr) public {
-        require(msg.sender == ownerAddr);
+    function setControllerAddr(address _controllerAddr) public onlyOwner {
         controllerAddr = _controllerAddr;
     }
 }
