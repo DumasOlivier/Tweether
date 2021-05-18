@@ -12,9 +12,11 @@ contract UserStorage is BaseStorage {
     uint256 latestUserId = 0;
     mapping(uint256 => Profile) public profiles;
 
-    function createUser(bytes32 _username) public returns (uint256) {
-        require(msg.sender == controllerAddr);
-
+    function createUser(bytes32 _username)
+        public
+        onlyController
+        returns (uint256)
+    {
         latestUserId++;
         profiles[latestUserId] = Profile(latestUserId, _username);
 
