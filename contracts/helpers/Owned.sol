@@ -10,7 +10,7 @@ contract Owned {
         deploying the contract for the very first time. This is a very common way of setting the
         initial ownerAddr securely.
     */
-    constructor() public {
+    constructor() {
         ownerAddr = msg.sender;
     }
 
