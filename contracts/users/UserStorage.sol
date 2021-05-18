@@ -9,7 +9,7 @@ contract UserStorage {
 
     uint256 latestUserId = 0;
 
-    mapping(uint256 => Profile) profiles;
+    mapping(uint256 => Profile) public profiles;
 
     function createUser(bytes32 _username) public returns (uint256) {
         latestUserId++;
