@@ -7,6 +7,6 @@ contract('users', () => {
     const username = web3.utils.fromAscii('Olivier');
     const tx = await storage.createUser(username);
 
-    console.log(tx);
+    assert.isOk(tx);
   });
 });
