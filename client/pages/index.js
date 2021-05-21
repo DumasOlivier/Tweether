@@ -1,56 +1,40 @@
-import { useEffect } from 'react';
-import { eth, getInstance } from '../web3/provider';
-import UserStorage from '../web3/artifacts/UserStorage.json';
+import { useState } from 'react';
+import { getUserInfo, createUser } from '../web3/users';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Button, Container, Row, Col } from 'reactstrap';
 
 const IndexPage = () => {
-  // Hooks
-  useEffect(() => {
-    try {
-      // Prompt user to let our DApp access their addresses
-      enableEthereum();
-      getEthAddress().then((addresses) => {
-        console.log('addresses', addresses);
-        getBalance(addresses).then((value) => {
-          console.log('value', value);
-        });
-      });
-      console.log('getAsyncInstance', getAsyncInstance());
-    } catch (e) {
-      console.log(e, 'User denied access to their ETH addresses!');
-    }
-  }, []);
+  const [userId, setuserId] = useState(null);
 
-  // Functions
-  const enableEthereum = async () => {
-    try {
-      await ethereum.enable();
-    } catch (e) {
-      console.log('e', e);
-    }
+  const logUser = async () => {
+    const userInfo = await getUserInfo(1);
+    setuserId(JSON.stringify(userInfo));
   };
 
-  const getEthAddress = async () => {
-    // Get user's ETH addresses
-    try {
-      return await eth.getAccounts();
-    } catch (e) {
-      console.log('e', e);
-    }
+  const createUser = async () => {
+    const tx = await createUser('Olivier');
+    console.log(tx);
   };
 
-  const getBalance = async (addresses) => {
-    return await eth.getBalance(addresses[0]);
-  };
-
-  const getAsyncInstance = async () => {
-    await getInstance(UserStorage).then(async (result) => {
-      // Fetch the user with ID 1
-      const { username } = await result.profiles.call(1);
-      return username;
-    });
-  };
-
-  return <h1>Hello world from Tweether</h1>;
+  return (
+    <Container>
+      <h1 className="text-center mt-5">Tweether.</h1>
+      <Row>
+        <Col className="d-flex justify-content-center">
+          <Button color="primary" className="mt-3" onClick={() => logUser()}>
+            Get user with ID 1
+          </Button>
+        </Col>
+      </Row>
+      <Row>
+        <Col>
+          <div className="mt-4" style={{ wordBreak: 'break-all' }}>
+            {userId && <div>UserId = {userId}</div>}
+          </div>
+        </Col>
+      </Row>
+    </Container>
+  );
 };
 
 export default IndexPage;
