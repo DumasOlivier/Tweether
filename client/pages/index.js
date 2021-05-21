@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
-import { eth } from '../web3/provider';
+import { eth, getInstance } from '../web3/provider';
+import UserStorage from '../web3/artifacts/UserStorage.json';
 
 const IndexPage = () => {
   // Hooks
@@ -13,6 +14,7 @@ const IndexPage = () => {
           console.log('value', value);
         });
       });
+      console.log('getAsyncInstance', getAsyncInstance());
     } catch (e) {
       console.log(e, 'User denied access to their ETH addresses!');
     }
@@ -38,6 +40,14 @@ const IndexPage = () => {
 
   const getBalance = async (addresses) => {
     return await eth.getBalance(addresses[0]);
+  };
+
+  const getAsyncInstance = async () => {
+    await getInstance(UserStorage).then(async (result) => {
+      // Fetch the user with ID 1
+      const { username } = await result.profiles.call(1);
+      return username;
+    });
   };
 
   return <h1>Hello world from Tweether</h1>;

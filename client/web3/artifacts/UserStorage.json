@@ -1,0 +1,1242 @@
+{
+  "contractName": "UserStorage",
+  "abi": [
+    {
+      "inputs": [],
+      "name": "controllerAddr",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function",
+      "constant": true
+    },
+    {
+      "inputs": [],
+      "name": "ownerAddr",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function",
+      "constant": true
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "profiles",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "id",
+          "type": "uint256"
+        },
+        {
+          "internalType": "bytes32",
+          "name": "username",
+          "type": "bytes32"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function",
+      "constant": true
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_controllerAddr",
+          "type": "address"
+        }
+      ],
+      "name": "setControllerAddr",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "transferOwnership",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "_username",
+          "type": "bytes32"
+        }
+      ],
+      "name": "createUser",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.7.0+commit.9e61f92b\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"controllerAddr\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"_username\",\"type\":\"bytes32\"}],\"name\":\"createUser\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"ownerAddr\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"profiles\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"id\",\"type\":\"uint256\"},{\"internalType\":\"bytes32\",\"name\":\"username\",\"type\":\"bytes32\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_controllerAddr\",\"type\":\"address\"}],\"name\":\"setControllerAddr\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_newOwner\",\"type\":\"address\"}],\"name\":\"transferOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"/Users/olivierdumas/solidity/Tweether/contracts/users/UserStorage.sol\":\"UserStorage\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/olivierdumas/solidity/Tweether/contracts/helpers/BaseStorage.sol\":{\"keccak256\":\"0xa5bd4c095a1964a67cdfce52faa86eca39824eb37f9f84db3431cc6fcd99110e\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://ebdcacb9ef403d0bf45a0676056eee93f657bf7c3b3fa41d866ef5d89f163d54\",\"dweb:/ipfs/QmXsuBX6r31TBuTr3qMACLmtcBHFqAVQFGKNBFVgJ71inv\"]},\"/Users/olivierdumas/solidity/Tweether/contracts/helpers/Owned.sol\":{\"keccak256\":\"0x72ba6c165c658b6ecca757a6d5e8791357238b00c9ed6972d399986172749419\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://13282649a4714a4b2540cab52036ce95ddab3b6275798d3d8120d20d5d692dfe\",\"dweb:/ipfs/QmXF9Hk1oUeHa7RhLzWYXwtPp4QCAAvBUSb1y2mbTusBW9\"]},\"/Users/olivierdumas/solidity/Tweether/contracts/users/UserStorage.sol\":{\"keccak256\":\"0x0c45a17b69b06952a45094e49043095c791405fe93d3a3866b34be92319c3ecb\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://d2f21792ec55440eda960d39a9d7fb56024c0d69dfddc46688926e965da00399\",\"dweb:/ipfs/QmTauD1RY4ufk9dMMc9uEosEz7sawicRWTochGmbW2dr8N\"]}},\"version\":1}",
+  "bytecode": "0x6080604052600060025534801561001557600080fd5b50336000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055506104b2806100656000396000f3fe608060405234801561001057600080fd5b50600436106100625760003560e01c80636981fa7d146100675780639c675eaa146100ab578063abf7bfd8146100df578063c36fe3d614610121578063ee255c571461016a578063f2fde38b1461019e575b600080fd5b6100a96004803603602081101561007d57600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506101e2565b005b6100b361027e565b604051808273ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b61010b600480360360208110156100f557600080fd5b81019080803590602001909291905050506102a2565b6040518082815260200191505060405180910390f35b61014d6004803603602081101561013757600080fd5b810190808035906020019092919050505061035d565b604051808381526020018281526020019250505060405180910390f35b610172610381565b604051808273ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b6101e0600480360360208110156101b457600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506103a7565b005b60008054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161461023a57600080fd5b80600160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555050565b60008054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b6000600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff16146102fe57600080fd5b600260008154809291906001019190505550604051806040016040528060025481526020018381525060036000600254815260200190815260200160002060008201518160000155602082015181600101559050506002549050919050565b60036020528060005260406000206000915090508060000154908060010154905082565b600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b60008054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff16146103ff57600080fd5b600073ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff16141561043957600080fd5b806000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055505056fea2646970667358221220a0689ff912b6467aed7e867cb4f089df48fae9111bb2c2b7493efbba1ce77bc264736f6c63430007000033",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100625760003560e01c80636981fa7d146100675780639c675eaa146100ab578063abf7bfd8146100df578063c36fe3d614610121578063ee255c571461016a578063f2fde38b1461019e575b600080fd5b6100a96004803603602081101561007d57600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506101e2565b005b6100b361027e565b604051808273ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b61010b600480360360208110156100f557600080fd5b81019080803590602001909291905050506102a2565b6040518082815260200191505060405180910390f35b61014d6004803603602081101561013757600080fd5b810190808035906020019092919050505061035d565b604051808381526020018281526020019250505060405180910390f35b610172610381565b604051808273ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b6101e0600480360360208110156101b457600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506103a7565b005b60008054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161461023a57600080fd5b80600160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555050565b60008054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b6000600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff16146102fe57600080fd5b600260008154809291906001019190505550604051806040016040528060025481526020018381525060036000600254815260200190815260200160002060008201518160000155602082015181600101559050506002549050919050565b60036020528060005260406000206000915090508060000154908060010154905082565b600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b60008054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff16146103ff57600080fd5b600073ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff16141561043957600080fd5b806000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055505056fea2646970667358221220a0689ff912b6467aed7e867cb4f089df48fae9111bb2c2b7493efbba1ce77bc264736f6c63430007000033",
+  "immutableReferences": {},
+  "sourceMap": "95:433:8:-:0;;;234:1;211:24;;95:433;;;;;;;;;;482:10:4;470:9;;:22;;;;;;;;;;;;;;;;;;95:433:8;;;;;;",
+  "deployedSourceMap": "95:433:8:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;249:118:3;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;78:24:4;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;291:235:8;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;241:43;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;116:29:3;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;592:144:4;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;249:118:3;558:9:4;;;;;;;;;;544:23;;:10;:23;;;536:32;;;;;;345:15:3::1;328:14;;:32;;;;;;;;;;;;;;;;;;249:118:::0;:::o;78:24:4:-;;;;;;;;;;;;:::o;291:235:8:-;385:7;210:14:3;;;;;;;;;;;196:28;;:10;:28;;;188:37;;;;;;408:12:8::1;;:14;;;;;;;;;;;;;457:32;;;;;;;;465:12;;457:32;;;;479:9;457:32;;::::0;432:8:::1;:22;441:12;;432:22;;;;;;;;;;;:57;;;;;;;;;;;;;;;;;;;507:12;;500:19;;291:235:::0;;;:::o;241:43::-;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;116:29:3:-;;;;;;;;;;;;;:::o;592:144:4:-;558:9;;;;;;;;;;544:23;;:10;:23;;;536:32;;;;;;694:1:::1;673:23;;:9;:23;;;;665:32;;;::::0;::::1;;720:9;708;::::0;:21:::1;;;;;;;;;;;;;;;;;;592:144:::0;:::o",
+  "source": "// SPDX-License-Identifier: MIT\npragma solidity ^0.7.0;\n\nimport \"../helpers/BaseStorage.sol\";\n\ncontract UserStorage is BaseStorage {\n    struct Profile {\n        uint256 id;\n        bytes32 username;\n    }\n\n    uint256 latestUserId = 0;\n    mapping(uint256 => Profile) public profiles;\n\n    function createUser(bytes32 _username)\n        public\n        onlyController\n        returns (uint256)\n    {\n        latestUserId++;\n        profiles[latestUserId] = Profile(latestUserId, _username);\n\n        return latestUserId;\n    }\n}\n",
+  "sourcePath": "/Users/olivierdumas/solidity/Tweether/contracts/users/UserStorage.sol",
+  "ast": {
+    "absolutePath": "/Users/olivierdumas/solidity/Tweether/contracts/users/UserStorage.sol",
+    "exportedSymbols": {
+      "UserStorage": [
+        356
+      ]
+    },
+    "id": 357,
+    "license": "MIT",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 316,
+        "literals": [
+          "solidity",
+          "^",
+          "0.7",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "32:23:8"
+      },
+      {
+        "absolutePath": "/Users/olivierdumas/solidity/Tweether/contracts/helpers/BaseStorage.sol",
+        "file": "../helpers/BaseStorage.sol",
+        "id": 317,
+        "nodeType": "ImportDirective",
+        "scope": 357,
+        "sourceUnit": 135,
+        "src": "57:36:8",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "abstract": false,
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 318,
+              "name": "BaseStorage",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 134,
+              "src": "119:11:8",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_BaseStorage_$134",
+                "typeString": "contract BaseStorage"
+              }
+            },
+            "id": 319,
+            "nodeType": "InheritanceSpecifier",
+            "src": "119:11:8"
+          }
+        ],
+        "contractDependencies": [
+          134,
+          180
+        ],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 356,
+        "linearizedBaseContracts": [
+          356,
+          134,
+          180
+        ],
+        "name": "UserStorage",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "canonicalName": "UserStorage.Profile",
+            "id": 324,
+            "members": [
+              {
+                "constant": false,
+                "id": 321,
+                "mutability": "mutable",
+                "name": "id",
+                "nodeType": "VariableDeclaration",
+                "overrides": null,
+                "scope": 324,
+                "src": "162:10:8",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 320,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "162:7:8",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 323,
+                "mutability": "mutable",
+                "name": "username",
+                "nodeType": "VariableDeclaration",
+                "overrides": null,
+                "scope": 324,
+                "src": "182:16:8",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bytes32",
+                  "typeString": "bytes32"
+                },
+                "typeName": {
+                  "id": 322,
+                  "name": "bytes32",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "182:7:8",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              }
+            ],
+            "name": "Profile",
+            "nodeType": "StructDefinition",
+            "scope": 356,
+            "src": "137:68:8",
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 327,
+            "mutability": "mutable",
+            "name": "latestUserId",
+            "nodeType": "VariableDeclaration",
+            "overrides": null,
+            "scope": 356,
+            "src": "211:24:8",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 325,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "211:7:8",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": {
+              "argumentTypes": null,
+              "hexValue": "30",
+              "id": 326,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "number",
+              "lValueRequested": false,
+              "nodeType": "Literal",
+              "src": "234:1:8",
+              "subdenomination": null,
+              "typeDescriptions": {
+                "typeIdentifier": "t_rational_0_by_1",
+                "typeString": "int_const 0"
+              },
+              "value": "0"
+            },
+            "visibility": "internal"
+          },
+          {
+            "constant": false,
+            "functionSelector": "c36fe3d6",
+            "id": 331,
+            "mutability": "mutable",
+            "name": "profiles",
+            "nodeType": "VariableDeclaration",
+            "overrides": null,
+            "scope": 356,
+            "src": "241:43:8",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Profile_$324_storage_$",
+              "typeString": "mapping(uint256 => struct UserStorage.Profile)"
+            },
+            "typeName": {
+              "id": 330,
+              "keyType": {
+                "id": 328,
+                "name": "uint256",
+                "nodeType": "ElementaryTypeName",
+                "src": "249:7:8",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "241:27:8",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Profile_$324_storage_$",
+                "typeString": "mapping(uint256 => struct UserStorage.Profile)"
+              },
+              "valueType": {
+                "contractScope": null,
+                "id": 329,
+                "name": "Profile",
+                "nodeType": "UserDefinedTypeName",
+                "referencedDeclaration": 324,
+                "src": "260:7:8",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_struct$_Profile_$324_storage_ptr",
+                  "typeString": "struct UserStorage.Profile"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 354,
+              "nodeType": "Block",
+              "src": "398:128:8",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 341,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "UnaryOperation",
+                    "operator": "++",
+                    "prefix": false,
+                    "src": "408:14:8",
+                    "subExpression": {
+                      "argumentTypes": null,
+                      "id": 340,
+                      "name": "latestUserId",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 327,
+                      "src": "408:12:8",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 342,
+                  "nodeType": "ExpressionStatement",
+                  "src": "408:14:8"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 350,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "baseExpression": {
+                        "argumentTypes": null,
+                        "id": 343,
+                        "name": "profiles",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 331,
+                        "src": "432:8:8",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Profile_$324_storage_$",
+                          "typeString": "mapping(uint256 => struct UserStorage.Profile storage ref)"
+                        }
+                      },
+                      "id": 345,
+                      "indexExpression": {
+                        "argumentTypes": null,
+                        "id": 344,
+                        "name": "latestUserId",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 327,
+                        "src": "441:12:8",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "nodeType": "IndexAccess",
+                      "src": "432:22:8",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Profile_$324_storage",
+                        "typeString": "struct UserStorage.Profile storage ref"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "arguments": [
+                        {
+                          "argumentTypes": null,
+                          "id": 347,
+                          "name": "latestUserId",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 327,
+                          "src": "465:12:8",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        {
+                          "argumentTypes": null,
+                          "id": 348,
+                          "name": "_username",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 333,
+                          "src": "479:9:8",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bytes32",
+                            "typeString": "bytes32"
+                          }
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          },
+                          {
+                            "typeIdentifier": "t_bytes32",
+                            "typeString": "bytes32"
+                          }
+                        ],
+                        "id": 346,
+                        "name": "Profile",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 324,
+                        "src": "457:7:8",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_struct$_Profile_$324_storage_ptr_$",
+                          "typeString": "type(struct UserStorage.Profile storage pointer)"
+                        }
+                      },
+                      "id": 349,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "structConstructorCall",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "457:32:8",
+                      "tryCall": false,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Profile_$324_memory_ptr",
+                        "typeString": "struct UserStorage.Profile memory"
+                      }
+                    },
+                    "src": "432:57:8",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_Profile_$324_storage",
+                      "typeString": "struct UserStorage.Profile storage ref"
+                    }
+                  },
+                  "id": 351,
+                  "nodeType": "ExpressionStatement",
+                  "src": "432:57:8"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 352,
+                    "name": "latestUserId",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 327,
+                    "src": "507:12:8",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "functionReturnParameters": 339,
+                  "id": 353,
+                  "nodeType": "Return",
+                  "src": "500:19:8"
+                }
+              ]
+            },
+            "documentation": null,
+            "functionSelector": "abf7bfd8",
+            "id": 355,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [
+              {
+                "arguments": null,
+                "id": 336,
+                "modifierName": {
+                  "argumentTypes": null,
+                  "id": 335,
+                  "name": "onlyController",
+                  "nodeType": "Identifier",
+                  "overloadedDeclarations": [],
+                  "referencedDeclaration": 121,
+                  "src": "353:14:8",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_modifier$__$",
+                    "typeString": "modifier ()"
+                  }
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "353:14:8"
+              }
+            ],
+            "name": "createUser",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 334,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 333,
+                  "mutability": "mutable",
+                  "name": "_username",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 355,
+                  "src": "311:17:8",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 332,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "311:7:8",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "310:19:8"
+            },
+            "returnParameters": {
+              "id": 339,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 338,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 355,
+                  "src": "385:7:8",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 337,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "385:7:8",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "384:9:8"
+            },
+            "scope": 356,
+            "src": "291:235:8",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "public"
+          }
+        ],
+        "scope": 357,
+        "src": "95:433:8"
+      }
+    ],
+    "src": "32:497:8"
+  },
+  "legacyAST": {
+    "attributes": {
+      "absolutePath": "/Users/olivierdumas/solidity/Tweether/contracts/users/UserStorage.sol",
+      "exportedSymbols": {
+        "UserStorage": [
+          356
+        ]
+      },
+      "license": "MIT"
+    },
+    "children": [
+      {
+        "attributes": {
+          "literals": [
+            "solidity",
+            "^",
+            "0.7",
+            ".0"
+          ]
+        },
+        "id": 316,
+        "name": "PragmaDirective",
+        "src": "32:23:8"
+      },
+      {
+        "attributes": {
+          "SourceUnit": 135,
+          "absolutePath": "/Users/olivierdumas/solidity/Tweether/contracts/helpers/BaseStorage.sol",
+          "file": "../helpers/BaseStorage.sol",
+          "scope": 357,
+          "symbolAliases": [
+            null
+          ],
+          "unitAlias": ""
+        },
+        "id": 317,
+        "name": "ImportDirective",
+        "src": "57:36:8"
+      },
+      {
+        "attributes": {
+          "abstract": false,
+          "contractDependencies": [
+            134,
+            180
+          ],
+          "contractKind": "contract",
+          "documentation": null,
+          "fullyImplemented": true,
+          "linearizedBaseContracts": [
+            356,
+            134,
+            180
+          ],
+          "name": "UserStorage",
+          "scope": 357
+        },
+        "children": [
+          {
+            "attributes": {
+              "arguments": null
+            },
+            "children": [
+              {
+                "attributes": {
+                  "contractScope": null,
+                  "name": "BaseStorage",
+                  "referencedDeclaration": 134,
+                  "type": "contract BaseStorage"
+                },
+                "id": 318,
+                "name": "UserDefinedTypeName",
+                "src": "119:11:8"
+              }
+            ],
+            "id": 319,
+            "name": "InheritanceSpecifier",
+            "src": "119:11:8"
+          },
+          {
+            "attributes": {
+              "canonicalName": "UserStorage.Profile",
+              "name": "Profile",
+              "scope": 356,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "constant": false,
+                  "mutability": "mutable",
+                  "name": "id",
+                  "overrides": null,
+                  "scope": 324,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "uint256",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "uint256",
+                      "type": "uint256"
+                    },
+                    "id": 320,
+                    "name": "ElementaryTypeName",
+                    "src": "162:7:8"
+                  }
+                ],
+                "id": 321,
+                "name": "VariableDeclaration",
+                "src": "162:10:8"
+              },
+              {
+                "attributes": {
+                  "constant": false,
+                  "mutability": "mutable",
+                  "name": "username",
+                  "overrides": null,
+                  "scope": 324,
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "type": "bytes32",
+                  "value": null,
+                  "visibility": "internal"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "bytes32",
+                      "type": "bytes32"
+                    },
+                    "id": 322,
+                    "name": "ElementaryTypeName",
+                    "src": "182:7:8"
+                  }
+                ],
+                "id": 323,
+                "name": "VariableDeclaration",
+                "src": "182:16:8"
+              }
+            ],
+            "id": 324,
+            "name": "StructDefinition",
+            "src": "137:68:8"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "mutability": "mutable",
+              "name": "latestUserId",
+              "overrides": null,
+              "scope": 356,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "uint256",
+              "visibility": "internal"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "name": "uint256",
+                  "type": "uint256"
+                },
+                "id": 325,
+                "name": "ElementaryTypeName",
+                "src": "211:7:8"
+              },
+              {
+                "attributes": {
+                  "argumentTypes": null,
+                  "hexvalue": "30",
+                  "isConstant": false,
+                  "isLValue": false,
+                  "isPure": true,
+                  "lValueRequested": false,
+                  "subdenomination": null,
+                  "token": "number",
+                  "type": "int_const 0",
+                  "value": "0"
+                },
+                "id": 326,
+                "name": "Literal",
+                "src": "234:1:8"
+              }
+            ],
+            "id": 327,
+            "name": "VariableDeclaration",
+            "src": "211:24:8"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "functionSelector": "c36fe3d6",
+              "mutability": "mutable",
+              "name": "profiles",
+              "overrides": null,
+              "scope": 356,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "mapping(uint256 => struct UserStorage.Profile)",
+              "value": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "type": "mapping(uint256 => struct UserStorage.Profile)"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "uint256",
+                      "type": "uint256"
+                    },
+                    "id": 328,
+                    "name": "ElementaryTypeName",
+                    "src": "249:7:8"
+                  },
+                  {
+                    "attributes": {
+                      "contractScope": null,
+                      "name": "Profile",
+                      "referencedDeclaration": 324,
+                      "type": "struct UserStorage.Profile"
+                    },
+                    "id": 329,
+                    "name": "UserDefinedTypeName",
+                    "src": "260:7:8"
+                  }
+                ],
+                "id": 330,
+                "name": "Mapping",
+                "src": "241:27:8"
+              }
+            ],
+            "id": 331,
+            "name": "VariableDeclaration",
+            "src": "241:43:8"
+          },
+          {
+            "attributes": {
+              "documentation": null,
+              "functionSelector": "abf7bfd8",
+              "implemented": true,
+              "isConstructor": false,
+              "kind": "function",
+              "name": "createUser",
+              "overrides": null,
+              "scope": 356,
+              "stateMutability": "nonpayable",
+              "virtual": false,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "_username",
+                      "overrides": null,
+                      "scope": 355,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "bytes32",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "bytes32",
+                          "type": "bytes32"
+                        },
+                        "id": 332,
+                        "name": "ElementaryTypeName",
+                        "src": "311:7:8"
+                      }
+                    ],
+                    "id": 333,
+                    "name": "VariableDeclaration",
+                    "src": "311:17:8"
+                  }
+                ],
+                "id": 334,
+                "name": "ParameterList",
+                "src": "310:19:8"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "",
+                      "overrides": null,
+                      "scope": 355,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 337,
+                        "name": "ElementaryTypeName",
+                        "src": "385:7:8"
+                      }
+                    ],
+                    "id": 338,
+                    "name": "VariableDeclaration",
+                    "src": "385:7:8"
+                  }
+                ],
+                "id": 339,
+                "name": "ParameterList",
+                "src": "384:9:8"
+              },
+              {
+                "attributes": {
+                  "arguments": null
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "argumentTypes": null,
+                      "overloadedDeclarations": [
+                        null
+                      ],
+                      "referencedDeclaration": 121,
+                      "type": "modifier ()",
+                      "value": "onlyController"
+                    },
+                    "id": 335,
+                    "name": "Identifier",
+                    "src": "353:14:8"
+                  }
+                ],
+                "id": 336,
+                "name": "ModifierInvocation",
+                "src": "353:14:8"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "operator": "++",
+                          "prefix": false,
+                          "type": "uint256"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 327,
+                              "type": "uint256",
+                              "value": "latestUserId"
+                            },
+                            "id": 340,
+                            "name": "Identifier",
+                            "src": "408:12:8"
+                          }
+                        ],
+                        "id": 341,
+                        "name": "UnaryOperation",
+                        "src": "408:14:8"
+                      }
+                    ],
+                    "id": 342,
+                    "name": "ExpressionStatement",
+                    "src": "408:14:8"
+                  },
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "operator": "=",
+                          "type": "struct UserStorage.Profile storage ref"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": true,
+                              "isPure": false,
+                              "lValueRequested": true,
+                              "type": "struct UserStorage.Profile storage ref"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 331,
+                                  "type": "mapping(uint256 => struct UserStorage.Profile storage ref)",
+                                  "value": "profiles"
+                                },
+                                "id": 343,
+                                "name": "Identifier",
+                                "src": "432:8:8"
+                              },
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 327,
+                                  "type": "uint256",
+                                  "value": "latestUserId"
+                                },
+                                "id": 344,
+                                "name": "Identifier",
+                                "src": "441:12:8"
+                              }
+                            ],
+                            "id": 345,
+                            "name": "IndexAccess",
+                            "src": "432:22:8"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "isStructConstructorCall": true,
+                              "lValueRequested": false,
+                              "names": [
+                                null
+                              ],
+                              "tryCall": false,
+                              "type": "struct UserStorage.Profile memory",
+                              "type_conversion": false
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": [
+                                    {
+                                      "typeIdentifier": "t_uint256",
+                                      "typeString": "uint256"
+                                    },
+                                    {
+                                      "typeIdentifier": "t_bytes32",
+                                      "typeString": "bytes32"
+                                    }
+                                  ],
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 324,
+                                  "type": "type(struct UserStorage.Profile storage pointer)",
+                                  "value": "Profile"
+                                },
+                                "id": 346,
+                                "name": "Identifier",
+                                "src": "457:7:8"
+                              },
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 327,
+                                  "type": "uint256",
+                                  "value": "latestUserId"
+                                },
+                                "id": 347,
+                                "name": "Identifier",
+                                "src": "465:12:8"
+                              },
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 333,
+                                  "type": "bytes32",
+                                  "value": "_username"
+                                },
+                                "id": 348,
+                                "name": "Identifier",
+                                "src": "479:9:8"
+                              }
+                            ],
+                            "id": 349,
+                            "name": "FunctionCall",
+                            "src": "457:32:8"
+                          }
+                        ],
+                        "id": 350,
+                        "name": "Assignment",
+                        "src": "432:57:8"
+                      }
+                    ],
+                    "id": 351,
+                    "name": "ExpressionStatement",
+                    "src": "432:57:8"
+                  },
+                  {
+                    "attributes": {
+                      "functionReturnParameters": 339
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "overloadedDeclarations": [
+                            null
+                          ],
+                          "referencedDeclaration": 327,
+                          "type": "uint256",
+                          "value": "latestUserId"
+                        },
+                        "id": 352,
+                        "name": "Identifier",
+                        "src": "507:12:8"
+                      }
+                    ],
+                    "id": 353,
+                    "name": "Return",
+                    "src": "500:19:8"
+                  }
+                ],
+                "id": 354,
+                "name": "Block",
+                "src": "398:128:8"
+              }
+            ],
+            "id": 355,
+            "name": "FunctionDefinition",
+            "src": "291:235:8"
+          }
+        ],
+        "id": 356,
+        "name": "ContractDefinition",
+        "src": "95:433:8"
+      }
+    ],
+    "id": 357,
+    "name": "SourceUnit",
+    "src": "32:497:8"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.7.0+commit.9e61f92b.Emscripten.clang"
+  },
+  "networks": {
+    "1621580306845": {
+      "events": {},
+      "links": {},
+      "address": "0xE7833C49fE51E9e7e2C9e385C08DDeA150e9C447",
+      "transactionHash": "0xcb707830baa3662172529a0e075e2b65669366adc9e8dc78d53b3cf2ffc1b885"
+    }
+  },
+  "schemaVersion": "3.4.1",
+  "updatedAt": "2021-05-21T07:47:07.111Z",
+  "networkType": "ethereum",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {},
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  }
+}
