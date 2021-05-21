@@ -1,6 +1,5 @@
 import { eth, getInstance } from './provider';
 import UserController from './artifacts/UserController.json';
-
 import UserStorage from './artifacts/UserStorage.json';
 
 export const getUserInfo = async (userId) => {
@@ -12,16 +11,19 @@ export const getUserInfo = async (userId) => {
 
 export const createUser = async (username) => {
   const controller = await getInstance(UserController);
+
   try {
     await ethereum.enable();
-    const addresses = await eth.getAccounts(); // Get Metamask addresses
+    const addresses = await eth.getAccounts();
 
-    // FIXME: add a check on the username (32 bytes).
-
-    // Create a user and pay the gas with the first address of Metamask addresses.
-    const result = await controller.createUser(eth.utils.fromAscii(username), {
-      from: addresses[0],
-    });
+    console.log('eth', eth);
+    // FIXME: Cannot read property 'fromAscii' of undefined / MetaMask no longer injects web3. For details
+    const result = await controller.createUser(
+      web3.utils.asciiToHex(username),
+      {
+        from: addresses[0],
+      }
+    );
 
     return result;
   } catch (err) {
