@@ -52,7 +52,7 @@ const IndexPage = () => {
       </Row>
       <Row>
         <Col>
-          <div className="mt-4" style={{ wordBreak: 'break-all' }}>
+          <div className="mt-4 text-center" style={{ wordBreak: 'break-all' }}>
             {userId && <div>UserId = {userId}</div>}
           </div>
         </Col>
